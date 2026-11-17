@@ -29,9 +29,9 @@ GitHub Pages 使用 `main` 分支根目录发布，无需构建。更新文件�
 
 官网 `#trailer` 使用原生 HTML video 直接播放 `assets/video/rescue-gameplay-1080p.mp4`，H.264/AAC、1080p/30fps、约 1 分 53 秒。视频与网页由同一 GitHub Pages 站点提供，不依赖 B 站站外播放器。使用 controls、playsinline、preload="metadata"，不自动播放。封面为同目录的 `rescue-gameplay-poster.jpg`。保留 B 站视频 `BV1knsK6JEHi` 的观看与评论链接。
 
-## 流量统计（待填 Clarity 项目 ID）
+## 流量统计（Clarity 已配置）
 
-`analytics.js` 已接入页面，但 `index.html` 的 `clarity-project-id` meta 内容为空，因此当前不会加载 Clarity，也不会收集数据。创建属于站点所有者的 Clarity 项目后，将其公开项目 ID 填入该 meta，提交并部署即可启用。项目 ID 不是 API 密钥，不要填入账号密码或导出令牌。
+官网 head 已加入用户提供的 Clarity 官方异步安装代码，项目 ID 为 `zf1aqouksw`。仅该代码加载 SDK；`analytics.js` 负责渠道标签和交互事件，不会重复注入追踪脚本。统计从部署后访客加载页面起开始，历史访问无法补录。
 
 事件：`watch_trailer_click`、`gameplay_video_play`（每次页面加载仅一次）、`gameplay_video_complete`（每次页面加载仅一次）、`bilibili_watch_click`、`steam_plan_click`、`business_contact_click`。`steam_plan_click` 仅代表查看发行计划，不代表 Steam 愿望单转化。
 

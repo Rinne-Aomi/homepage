@@ -1,15 +1,7 @@
-/* Set the public Clarity project ID in index.html to enable collection. */
+/* The official snippet in index.html owns SDK loading; this file only records events. */
 (() => {
   'use strict';
-  const projectId = document.querySelector('meta[name="clarity-project-id"]')?.content.trim();
-  if (!projectId || !/^[a-z0-9]+$/i.test(projectId)) return;
-  window.clarity = window.clarity || function () {
-    (window.clarity.q = window.clarity.q || []).push(arguments);
-  };
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.clarity.ms/tag/' + encodeURIComponent(projectId);
-  document.head.appendChild(script);
+  if (typeof window.clarity !== 'function') return;
 
   // Use bounded campaign labels rather than passing arbitrary URL contents.
   const source = new URLSearchParams(window.location.search).get('utm_source');
