@@ -27,4 +27,4 @@ GitHub Pages 使用 `main` 分支根目录发布，无需构建。更新文件�
 
 ## 实机视频
 
-B 站视频 `BV1knsK6JEHi` 嵌入 `#trailer`，使用官方播放器，关闭自动播放与弹幕，16:9 响应式容器。保留直接跳转 B 站观看和评论的入口。更换视频时同步更新 iframe 的 bvid 和外链。
+官网 `#trailer` 使用原生 HTML video 直接播放 `assets/video/rescue-gameplay-1080p.mp4`，H.264/AAC、1080p/30fps、约 1 分 53 秒。视频与网页由同一 GitHub Pages 站点提供，不依赖 B 站站外播放器。使用 controls、playsinline、preload="metadata"，不自动播放。封面为同目录的 `rescue-gameplay-poster.jpg`。保留 B 站视频 `BV1knsK6JEHi` 的观看与评论链接。
