@@ -12,7 +12,7 @@ document.querySelectorAll('[data-image]').forEach(button => {
     featured.alt = button.dataset.description;
     openScreen.dataset.screen = button.dataset.image;
     openScreen.dataset.caption = button.dataset.description;
-    openScreen.setAttribute('aria-label', '放大实机画面：' + button.dataset.description);
+    openScreen.setAttribute('aria-label', 'ゲーム画面を拡大：' + button.dataset.description);
   });
 });
 const dialog = document.querySelector('#screen-dialog');
@@ -30,7 +30,7 @@ document.querySelectorAll('[data-form]').forEach(button => {
   button.addEventListener('click', () => {
     const restored = button.dataset.form === 'restored';
     transformImage.src = restored ? 'assets/brindle.webp' : 'assets/mist-dog.webp';
-    transformImage.alt = restored ? '黑雾散去，大门牙恢复成抬爪微笑的小法斗' : '受黑雾控制的大门牙';
+    transformImage.alt = restored ? '霧が晴れ、前足を上げて微笑むデッパ' : '黒い霧に操られたデッパ';
     document.querySelectorAll('[data-form]').forEach(item => {
       const active = item === button;
       item.classList.toggle('active', active);
